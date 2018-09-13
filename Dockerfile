@@ -35,7 +35,7 @@ LABEL Description="This is a base image, which provides the Jenkins agent execut
 ARG VERSION=3.23
 ARG AGENT_WORKDIR=/home/${user}/agent
 
-ENV KUBE_LATEST_VERSION="v1.11.2"
+ENV KUBE_LATEST_VERSION="v1.10.2"
 ENV HELM_VERSION="v2.10.0"
 
 RUN apk add --update --no-cache curl bash git openssh-client openssl procps ca-certificates bash git \
