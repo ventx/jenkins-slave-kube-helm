@@ -1,2 +1,2 @@
 # jenkins-slave-kube-helm
-# jenkins-slave-kube-helm
+# jnlp Jenkins Slave with kubectl and helm
