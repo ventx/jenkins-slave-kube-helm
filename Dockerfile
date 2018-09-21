@@ -37,8 +37,10 @@ ARG AGENT_WORKDIR=/home/${user}/agent
 
 ENV KUBE_LATEST_VERSION="v1.10.3"
 ENV HELM_VERSION="v2.8.1"
+ENV AWSCLI 1.15.66
 
-RUN apk add --update --no-cache curl bash git openssh-client openssl procps ca-certificates bash git \
+
+RUN apk add --update --no-cache curl bash git openssh-client openssl procps ca-certificates bash git pip python py-pip \ 
   && curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar \
@@ -46,7 +48,10 @@ RUN apk add --update --no-cache curl bash git openssh-client openssl procps ca-c
   && wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
   && chmod +x /usr/local/bin/kubectl \
   && wget -q http://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
-  && chmod +x /usr/local/bin/helm
+  && chmod +x /usr/local/bin/helm \
+  && pip install --upgrade pip \
+  && pip install awscli==${AWSCLI}
+
 USER ${user}
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
