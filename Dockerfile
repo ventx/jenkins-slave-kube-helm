@@ -40,7 +40,7 @@ ENV HELM_VERSION="v2.8.1"
 ENV AWSCLI=1.15.66
 
 
-RUN apk add --update --no-cache curl bash git openssh-client openssl procps ca-certificates bash git python py-pip \ 
+RUN apk add --update --no-cache curl bash git openssh-client openssl procps ca-certificates bash git python py-pip gettext \ 
   && curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar \
