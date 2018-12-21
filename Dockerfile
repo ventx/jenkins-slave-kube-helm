@@ -29,7 +29,7 @@ RUN apk add --update --no-cache python3-dev postgresql-client vim python-dev xml
 RUN pip install --upgrade pip \
   && pip install lxml selenium html requests allure-pytest pytest-allure-adaptor \
   && pip install awscli==${AWSCLI} \
-  && pip3 install imbox six requests allure-pytest lxml
+  && pip3 install selenium imbox six requests allure-pytest lxml
 
 USER ${user}
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
