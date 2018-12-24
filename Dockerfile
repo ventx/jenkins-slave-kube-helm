@@ -31,6 +31,12 @@ RUN pip install --upgrade pip \
   && pip install awscli==${AWSCLI} \
   && pip3 install selenium imbox six requests allure-pytest lxml pillow==2.9.0 pdf2image
 
+ADD https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/allure-2.7.0.tgz /opt/
+RUN tar -xvzf /opt/allure-2.7.0.tgz --directory /opt/ \
+    && rm /opt/allure-2.7.0.tgz
+
+ENV PATH="/opt/allure-2.7.0/bin:${PATH}"
+
 USER ${user}
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
