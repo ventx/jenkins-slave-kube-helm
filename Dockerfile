@@ -37,7 +37,7 @@ RUN tar -xvzf /opt/allure-2.7.0.tgz --directory /opt/ \
 
 ENV PATH="/opt/allure-2.7.0/bin:${PATH}"
 
-USER ${user}
+#USER ${user}
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
 
