@@ -13,10 +13,10 @@ LABEL Description="This is a base image, which provides the Jenkins agent execut
 ARG VERSION=3.23
 ARG AGENT_WORKDIR=/home/${user}/agent
 
-ENV KUBE_LATEST_VERSION="v1.11.6"
-ENV KUBE_RUNNING_VERSION="v1.11.6"
-ENV HELM_VERSION="v2.11.0"
-ENV AWSCLI 1.16.20
+ENV KUBE_LATEST_VERSION v1.11.6
+ENV KUBE_RUNNING_VERSION 1.11.6
+ENV HELM_VERSION v2.13.0
+ENV AWSCLI 1.16.125
 
 RUN apk add --update --no-cache python3-dev postgresql-client vim python-dev xmlstarlet python3 gcc g++ make libxml2-dev py-libxml2 py-libxslt libxml2-utils libxml2-dev libxslt-dev curl bash openssh-client openssl procps ca-certificates git python py-pip gettext \ 
   && curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
