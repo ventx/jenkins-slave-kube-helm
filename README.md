@@ -18,6 +18,7 @@
 
 * [bash](https://pkgs.alpinelinux.org/package/v3.9/community/x86_64/bash)
 * [ca-certificates](https://pkgs.alpinelinux.org/package/v3.9/community/x86_64/ca-certificates)
+* [coreutils](https://pkgs.alpinelinux.org/package/v3.9/community/x86_64/coreutils)
 * [curl](https://pkgs.alpinelinux.org/package/v3.9/community/x86_64/curl)
 * [git](https://pkgs.alpinelinux.org/package/v3.9/community/x86_64/git)
 * [mongodb](https://pkgs.alpinelinux.org/package/v3.9/community/x86_64/mongodb)
